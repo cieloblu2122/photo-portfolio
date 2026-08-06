@@ -1,0 +1,151 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mizuki Atelier | 作品詳細</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<style>
+/* 写真紹介サイト風：中央寄せ・写真の下に説明文カスタムスタイル */
+.gallery-detail-wrapper {
+	max-width: 1000px;
+	margin: 30px auto 100px auto;
+}
+/* 上側：写真をダイナミックに大きく見せるエリア */
+.gallery-large-photo {
+	width: 100%;
+	margin-bottom: 50px;/* 写真と下の文字との余白 */
+}
+
+.gallery-large-photo img {
+	width: 100%; height:auto;
+	border-radius: 6px;
+	box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+/* 下側：2段組（左にタイトルと文章、右にカメラ情報） */
+.gallery-bottom-info {
+	display: flex; justify-content: space-between;
+	gap: 60px;
+}
+
+.gallery-info-left {
+	flex: 1; padding-top: 5px;
+}
+
+.gallery-detail-story {
+	font-size: 14px;
+	color: #555555;
+	line-height: 2.2;
+}
+/* 右側：カメラ仕様（ミニマルなスペック表） */
+.gallery-info-right {
+	width: 320px;
+	flex-shrink: 0;
+}
+
+.gallery-spec-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 12px;
+	color: #666666;
+}
+
+.gallery-spec-table th,
+.gallery-spec-table td {
+	padding: 12px 0; 
+	border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+	text-align: left;
+}
+
+.gallery-spec-table th { 
+	font-weight: bold; color: #222222; 
+	width: 100px; 
+l	etter-spacing: 0.05em; }
+
+.gallery-spec-table td { 
+	color: #555555;
+}
+/* ギャラリーに戻るリンクのハコ */
+.gallery-back-box {
+	margin-bottom: 30px;
+	}
+
+.gallery-back-link {
+	font-size: 12px; color: #666666; 
+	letter-spacing: 0.05em; 
+	transition: color 0.3s; 
+	display: inline-block;
+}
+
+.gallery-back-link:hover {
+	color: #111111;
+}
+
+/* タブレット・スマホ用のレスポンシブ対応 */
+@media (max-width: 768px){
+.gallery-bottom-info {
+	flex-direction: column;/* 縦並びにする */
+	gap: 40px;
+}
+
+.gallery-info-right {
+	width: 100%;/* 横幅いっぱい */
+	}
+}
+</style>
+</head>
+<body>
+
+<header class="header">
+<nav class="nav">
+<a href="../index.html">Top</a>
+<a href="../index.html#photo" class="active">Photo</a>
+<a href="../index.html#profile">Profile</a>
+<a href="../index.html#contact">Contact</a>
+</nav>
+</header>
+
+<main class="container">
+<div class="gallery-detail-wrapper">
+<div class="gallery-back-box">
+<a href="#" class="gallery-back-link" onclick="if(window.location.search.includes('from=top') || (document.referrer && document.referrer.includes('index.html'))){ location.href='../index.html#photo'; }else{ location.href='photo.html'; } return false;">
+← Back to Gallery
+</a>
+</div>
+
+<div class="gallery-large-photo">
+<img src="../img/p10.jpg" alt="カワウソ">
+</div>
+
+<div class="gallery-bottom-info">
+<div class="gallery-info-left">
+<p class="gallery-detail-story">
+江の島水族館での1枚<br>
+このカワウソ君ビジュ良すぎる
+</p>
+</div> <div class="gallery-info-right">
+<table class="gallery-spec-table">
+<tbody>
+<tr>
+<th>Location</th>
+<td>Kanagawa, Japan</td>
+</tr>
+<tr>
+<th>Camera</th>
+<td>Canon EOS Kiss X90</td>
+</tr>
+<tr>
+<th>Lens</th>
+<td>CanonEF-S18-55mm</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</main>
+</body>
+</html>

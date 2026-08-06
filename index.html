@@ -1,0 +1,268 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mizuki Atelier | Photo Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="header">
+<nav class="nav">
+<a href="#" class="nav-top-link active">Top</a>
+<a href="#photo" class="nav-scroll-link">Photo</a>
+<a href="#profile" class="nav-scroll-link">Profile</a>
+<a href="#contact" class="nav-scroll-link">Contact</a>
+</nav>
+</header>
+
+<main>
+<section class="hero container">
+<h1 class="site-title">Mizuki<br>Atelier</h1>
+<p class="hero-text">
+やわらかな色彩が溶け合い、静かな物語が紡がれる場所。<br>
+水底に差し込む光も、見慣れた街の片隅も、すべての景色が日常の温もりと穏やかな光をまとっています。<br>
+立ち止まり、心で聴く光のささやきを、どうぞごゆっくりお楽しみください。
+</p>
+</section>
+
+<div class="works-container">
+<div class="works-track">
+<div class="works-list"></div>
+<div class="works-list"></div>
+</div>
+</div>
+
+<section id="photo" class="section container">
+<div class="section-header">
+<h2 class="section-title">Photo</h2>
+<a href="Photo/photo.html" class="view-all">View All Photograph →</a>
+</div>
+<div class="works-micro-grid">
+<a href="Photo/photo1.html" class="work-item-small"><div class="thumb-box"><img src="img/p01.jpg" alt="Work 01"></div></a>
+<a href="Photo/photo2.html" class="work-item-small"><div class="thumb-box"><img src="img/p02.jpg" alt="Work 02"></div></a>
+<a href="Photo/photo3.html" class="work-item-small"><div class="thumb-box"><img src="img/p03.jpg" alt="Work 03"></div></a>
+<a href="Photo/photo4.html" class="work-item-small"><div class="thumb-box"><img src="img/p04.jpg" alt="Work 04"></div></a>
+<a href="Photo/photo5.html" class="work-item-small"><div class="thumb-box"><img src="img/p05.jpg" alt="Work 05"></div></a>
+<a href="Photo/photo6.html" class="work-item-small"><div class="thumb-box"><img src="img/p06.jpg" alt="Work 06"></div></a>
+<a href="Photo/photo7.html" class="work-item-small"><div class="thumb-box"><img src="img/p07.jpg" alt="Work 07"></div></a>
+<a href="Photo/photo8.html" class="work-item-small"><div class="thumb-box"><img src="img/p08.jpg" alt="Work 08"></div></a>
+<a href="Photo/photo9.html" class="work-item-small"><div class="thumb-box"><img src="img/p09.jpg" alt="Work 09"></div></a>
+<a href="Photo/photo10.html" class="work-item-small"><div class="thumb-box"><img src="img/p10.jpg" alt="Work 10"></div></a>
+</div>
+</section>
+
+<section id="profile" class="section container">
+  <div class="section-header">
+    <h2 class="section-title">Profile</h2>
+  </div>
+  <div class="profile-content">
+    <img src="img/prof.png" alt="Mizuki" class="profile-image">
+    <div class="profile-text-box">
+      <h3>Mizuki</h3>
+      <p class="profile-sub">Photographer</p>
+      <p class="profile-camera" style="font-size: 13px; color: #666666; margin-bottom: 15px; letter-spacing: 0.05em; line-height: 1.6;">
+        使用カメラ:Canon EOS Kiss X90<br>
+        使用レンズ:CanonEF-S18-55mm F4-5.6 IS STM/Canon EF50mm f1.8STM <br>
+        Canon EF-S 55-250mm F4-5.6 IS STM
+      </p>
+      <p class="profile-desc">
+        イルカが好きでイルカが撮りたくて、カメラを手にしました。<br>
+        日常の何気ない瞬間や、心がじんわりと温かくなるような光を切り取るのが得意です。<br>
+        私の写真を通して、日々の暮らしに散りばめられた小さな幸せや温もりを感じていただけたら嬉しいです。
+      </p>
+
+      <!-- ★ ここから追加 ★ -->
+      <div class="profile-sns">
+        <a href="https://x.com/あなたのアカウント名" target="_blank" rel="noopener noreferrer" class="profile-x-link">
+          <img src="img/x.png" alt="X (Twitter)" class="profile-x-icon">
+          <span>X (Twitter)</span>
+        </a>
+      </div>
+      <!-- ★ ここまで追加 ★ -->
+
+    </div>
+  </div>
+</section>
+<section id="contact" class="section container">
+<div class="section-header">
+<h2 class="section-title">Contact</h2>
+</div>
+<div class="contact-content">
+<p class="contact-text">作品に関するご質問や、撮影のご依頼など、お気軽にお問い合わせください。</p>
+<form class="contact-form" action="https://formspree.io/f/xpwqwweg" method="POST">
+<div class="form-group">
+<label for="name">Name</label>
+<input type="text" id="name" name="name" required placeholder="お名前をご入力ください">
+</div>
+<div class="form-group">
+<label for="email">Email</label>
+<input type="email" id="email" name="_replyto" required placeholder="メールアドレスをご入力ください">
+</div>
+<div class="form-group">
+<label for="message">Message</label>
+<textarea id="message" name="message" rows="6" required placeholder="お問い合わせ内容をご入力ください"></textarea>
+</div>
+<button type="submit" class="submit-btn">Send Message</button>
+</form>
+</div>
+</section>
+</main>
+
+<footer class="footer">
+<p>&copy; 2026 Mizuki Atelier. All Rights Reserved.</p>
+</footer>
+
+<div id="photoModal" class="modal">
+<div class="modal-content-wrap">
+<div class="modal-box">
+<span class="close-btn">&times;</span>
+<div class="modal-img-wrap">
+<img id="modalImg" src="" alt="拡大画像">
+</div>
+<div class="modal-info" style="text-align: center; padding-top: 5px;">
+<a id="modalDetailLink" href="Photo/photo1.html" class="modal-detail-btn" style="margin-top: 5px;">View Details</a>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+const itemData = {
+"1": { title: "イルカタイル", text: "八景島シーパラダイスにあるイルカタイルの夜Ver", link: "Photo/photo1.html", img: "img/p01.jpg", alt: "Work1" },
+"2": { title: "うみたまご", text: "うみたまごでの一枚", link: "Photo/photo2.html", img: "img/p02.jpg", alt: "Work 02" },
+"3": { title: "イルカの親子", text: "イルカの親子のショット", link: "Photo/photo3.html", img: "img/p03.jpg", alt: "Work 03" },
+"4": { title: "夕暮れ時", text: "夕暮れが綺麗で撮った１枚", link: "Photo/photo4.html", img: "img/p04.jpg", alt: "Work 04" },
+"5": { title: "青の世界", text: "八景島シーパラダイスのメイン水槽での一枚。", link: "Photo/photo5.html", img: "img/p05.jpg", alt: "Work 05" },
+"6": { title: "親子2", text: "お母さんと子イルカの２ショット。", link: "Photo/photo6.html", img: "img/p06.jpg", alt: "Work 06" },
+"7": { title: "カメ", text: "のんびりカメさん", link: "Photo/photo7.html", img: "img/p07.jpg", alt: "Work 07" },
+"8": { title: "マンタ", text: "ドアップで撮れました", link: "Photo/photo8.html", img: "img/p08.jpg", alt: "Work 08" },
+"9": { title: "マンタ", text: "ドアップで撮れました", link: "Photo/photo9.html", img: "img/p09.jpg", alt: "Work 09" },
+"10": { title: "マンタ", text: "ドアップで撮れました", link: "Photo/photo10.html", img: "img/p10.jpg", alt: "Work 10" },
+"11": { title: "マンタ", text: "ドアップで撮れました", link: "Photo/photo11.html", img: "img/p11.jpg", alt: "Work 11" },
+"12": { title: "マンタ", text: "ドアップで撮れました", link: "Photo/photo12.html", img: "img/p12.jpg", alt: "Work 12" },
+"13": { title: "マンタ", text: "ドアップで撮れました", link: "Photo/photo13.html", img: "img/p13.jpg", alt: "Work 13" },
+"14": { title: "マンタ", text: "ドアップで撮れました", link: "Photo/photo14.html", img: "img/p14.jpg", alt: "Work 14" },
+"15": { title: "マンタ", text: "ドアップで撮れました", link: "Photo/photo15.html", img: "img/p15.jpg", alt: "Work 15" },
+"16": { title: "マンタ", text: "ドアップで撮れました", link: "Photo/photo16.html", img: "img/p16.jpg", alt: "Work 16" },
+"17": { title: "マンタ", text: "ドアップで撮れました", link: "Photo/photo17.html", img: "img/p17.jpg", alt: "Work 17" },
+"18": { title: "マンタ", text: "ドアップで撮れました", link: "Photo/photo18.html", img: "img/p18.jpg", alt: "Work 18" },
+"19": { title: "マンタ", text: "ドアップで撮れました", link: "Photo/photo19.html", img: "img/p19.jpg", alt: "Work 19" },
+"20": { title: "マンタ", text: "ドアップで撮れました", link: "Photo/photo20.html", img: "img/p20.jpg", alt: "Work 20" },
+"21": { title: "マンタ", text: "ドアップで撮れました", link: "Photo/photo21.html", img: "img/p21.jpg", alt: "Work 21" },
+"22": { title: "マンタ", text: "ドアップで撮れました", link: "Photo/photo22.html", img: "img/p22.jpg", alt: "Work 22" },
+"23": { title: "マンタ", text: "ドアップで撮れました", link: "Photo/photo23.html", img: "img/p23.jpg", alt: "Work 23" },
+"24": { title: "マンタ", text: "ドアップで撮れました", link: "Photo/photo24.html", img: "img/p24.jpg", alt: "Work 24" },
+"25": { title: "マンタ", text: "ドアップで撮れました", link: "Photo/photo25.html", img: "img/p25.jpg", alt: "Work 25" },
+"26": { title: "マンタ", text: "ドアップで撮れました", link: "Photo/photo26.html", img: "img/p26.jpg", alt: "Work 26" }
+};
+
+function shuffleArray(array) {
+for (let i = array.length - 1; i > 0; i--) {
+const j = Math.floor(Math.random() * (i + 1));
+[array[i], array[j]] = [array[j], array[i]];
+}
+return array;
+}
+
+function initRandomLoopGallery() {
+const tracks = document.querySelectorAll('.works-list');
+if (tracks.length < 2) return;
+const keys = Object.keys(itemData);
+const shuffledKeys = shuffleArray(keys);
+let htmlContent = '';
+shuffledKeys.forEach(key => {
+const item = itemData[key];
+htmlContent += `<div class="work-item" data-index="${key}">` +
+`<img src="${item.img}" alt="${item.alt}">` +
+`<div class="work-caption"><span>Photograph</span></div>` +
+`</div>`;
+});
+tracks[0].innerHTML = htmlContent;
+tracks[1].innerHTML = htmlContent;
+setupGalleryClickEvents();
+}
+
+const modal = document.getElementById('photoModal');
+const modalImg = document.getElementById('modalImg');
+const modalDetailLink = document.getElementById('modalDetailLink');
+const closeBtn = document.querySelector('.close-btn');
+
+function setupGalleryClickEvents() {
+document.querySelectorAll('.work-item').forEach(item => {
+item.addEventListener('click', () => {
+const idx = item.getAttribute('data-index');
+const data = itemData[idx];
+const img = item.querySelector('img');
+if (data && img && modal) {
+modalImg.src = img.src;
+modalDetailLink.href = data.link;
+modalDetailLink.style.display = "inline-block";
+modal.style.display = "block";
+setTimeout(() => modal.classList.add('show'), 10);
+}
+});
+});
+}
+
+const closeModal = () => {
+if (modal) {
+modal.classList.remove('show');
+setTimeout(() => modal.style.display = "none", 300);
+}
+};
+
+if (closeBtn) closeBtn.addEventListener('click', closeModal);
+if (modal) {
+modal.addEventListener('click', (e) => {
+if (e.target === modal || e.target.classList.contains('modal-content-wrap')) closeModal();
+});
+}
+
+const topLink = document.querySelector('.nav-top-link');
+if (topLink) {
+topLink.addEventListener('click', (e) => {
+e.preventDefault();
+window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+}
+
+document.querySelectorAll('.nav-scroll-link').forEach(link => {
+link.addEventListener('click', (e) => {
+e.preventDefault();
+const targetEl = document.querySelector(link.getAttribute('href'));
+if (targetEl) window.scrollTo({ top: targetEl.offsetTop - 40, behavior: 'smooth' });
+});
+});
+
+const navLinks = document.querySelectorAll('.nav a');
+const sections = [
+{ name: '#', top: 0 },
+{ name: '#photo', el: document.getElementById('photo') },
+{ name: '#profile', el: document.getElementById('profile') },
+{ name: '#contact', el: document.getElementById('contact') }
+];
+
+window.addEventListener('scroll', () => {
+let currentSection = '#';
+const scrollPos = window.scrollY + 160;
+sections.forEach(sec => {
+if (sec.el && scrollPos >= sec.el.offsetTop) currentSection = sec.name;
+});
+navLinks.forEach(link => {
+if (link.getAttribute('href') === currentSection || (currentSection === '#' && link.classList.contains('nav-top-link'))) {
+link.classList.add('active');
+} else {
+link.classList.remove('active');
+}
+});
+});
+
+window.addEventListener('DOMContentLoaded', initRandomLoopGallery);
+</script>
+</body>
+</html>

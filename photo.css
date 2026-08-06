@@ -1,0 +1,211 @@
+﻿/* ==========================================================================
+   1. リセット & 共通設定
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Hiragino Maru Gothic ProN", "Hiragino Kaku Gothic ProN", 'Noto Sans JP', sans-serif;
+  /* トップページと完全に同じ、美しい青のグラデーション背景をここに直接塗ります */
+  background: linear-gradient(135deg, #e3f2fd 0%, #e0f7fa 40%, #b3e5fc 70%, #e1f5fe 100%);
+  background-attachment: fixed; 
+  color: #444444; 
+  line-height: 1.9; 
+  letter-spacing: 0.05em;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden; 
+  padding-top: 75px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 100px 40px 40px 40px; 
+  margin: 0 auto;
+}
+
+.header {
+  width: 100%;
+}
+/* ==========================================================================
+   2. ギャラリー一覧（7列の美しいグリッド配置）
+   ========================================================================== */
+.works-micro-grid {
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr) !important; 
+  gap: 16px; 
+  width: 100%;
+  margin-bottom: 100px;
+}
+
+/* ==========================================================================
+   3. レスポンシブ対応（画面の幅に合わせて自動で列数を変える）
+   ========================================================================== */
+@media (max-width: 1200px) {
+  /* タブレットなどの中画面では5列にする */
+  .works-micro-grid { 
+    grid-template-columns: repeat(5, 1fr) !important;
+  }
+}
+
+@media (max-width: 768px) {
+  /* スマホなどの小画面では3列にして、余白も狭くする */
+  .container { 
+    padding: 80px 20px 20px 20px; 
+  }
+  .works-micro-grid { 
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 10px;
+  }
+}
+
+/* ==========================================================================
+   4. 無限自動横スクロール（パターンA：文字が浮き出る完全版）
+   ========================================================================== */
+.works-container {
+  width: 100%;
+  overflow: hidden; 
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.works-track {
+  display: flex;
+  width: max-content;
+  animation: loop-animation 40s linear infinite;
+}
+
+.works-track:hover {
+  animation-play-state: paused; 
+}
+
+@keyframes loop-animation {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.work-item {
+  position: relative;
+  width: 280px;
+  margin-right: 24px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+  cursor: pointer;
+}
+
+.work-item img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), filter 0.6s ease;
+}
+
+/* マウスを乗せたときに写真を少し拡大して、文字が見えやすいようにほんのり暗く */
+.work-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.8);
+}
+
+/* 下側にうっすらと黒いグラデーションの影を入れて白い文字を見やすくする */
+.work-item::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.work-item:hover::after {
+  opacity: 1;
+}
+
+/* ?? HTMLに書いてくれた文字データを最初は透明にして下に隠す設定 */
+.work-caption {
+  display: block !important; 
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 24px;
+  box-sizing: border-box;
+  color: #ffffff !important;
+  transform: translateY(15px); 
+  opacity: 0;                  
+  transition: transform 0.45s cubic-bezier(0.25, 1, 0.5, 1), opacity 0.45s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* マウスを乗せたときに文字をふわっと上に持ち上げる */
+.work-item:hover .work-caption {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.work-caption em {
+  font-family: 'Noto Serif JP', serif;
+  font-style: normal;
+  font-size: 16px;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 6px;
+  letter-spacing: 0.08em;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+}
+
+.work-caption span {
+  font-size: 11px;
+  opacity: 0.85;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: inline-block;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+/* ==========================================================================
+   5. フッター
+   ========================================================================== */
+.footer {
+  text-align: center;
+  padding: 50px 20px;
+  font-size: 11px;
+  color: #888888;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+/* ==========================================================================
+   6. ギャラリー一覧ページ用のふわっと浮き出るアニメーション（動き強調版）
+   ========================================================================== */
+/* ページ全体（メインコンテナ） */
+main.container {
+  opacity: 0;
+  /* ?? 距離を 25px → 60px に大きくして、下からしっかり上がってくるように変更 */
+  transform: translateY(60px); 
+  
+  /* ?? 時間を 1.4秒 → 0.9秒 に短縮し、きびきびとした心地よい加速感に変更 */
+  animation: elegantFadeUp 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* アニメーションの具体的な動きのルール */
+@keyframes elegantFadeUp {
+  0% {
+    opacity: 0;
+    /* ?? スタート位置をガッツリ下に下げておきます */
+    transform: translateY(60px);
+  }
+  100% {
+    opacity: 1;
+    /* ?? 最後はピタッと元の位置（0）で止まります */
+    transform: translateY(0);
+  }
+}
